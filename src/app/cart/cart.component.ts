@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { CartService } from '../cart.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
@@ -15,10 +15,18 @@ export class CartComponent {
   }
 
   checkoutForm = this.formBuilder.group({ name: '', address: '' });
+  options: FormGroup;
+  hideRequiredControl = new FormControl(false);
+
   constructor(
     private cartService: CartService,
-    private formBuilder: FormBuilder
-  ) {}
+    private formBuilder: FormBuilder,
+    fb: FormBuilder
+  ) {
+    this.options = fb.group({
+      hideRequired: this.hideRequiredControl,
+    });
+  }
 
   onSubmit() {
     this.clearCart();
