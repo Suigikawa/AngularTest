@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { CartService } from '../cart.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-cart',
