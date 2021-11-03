@@ -10,9 +10,11 @@
 <div class="cart-controller">
   <button *ngIf="items.length" (click)="clearCart()">Clear cart</button>
   <form *ngIf="items.length" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
-    <mat-checkbox [formControl]="hideRequiredControl"
-      >Hide required marker</mat-checkbox
-    >
+    <div>
+      <mat-checkbox [formControl]="hideRequiredControl"
+        >Hide required marker</mat-checkbox
+      >
+    </div>
     <!--<div>
       <label>Name</label>
       <input id="name" type="text" formControlName="name" />
