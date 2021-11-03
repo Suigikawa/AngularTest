@@ -1,0 +1,10 @@
+<h3>Cart</h3>
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+<div class="cart-controller">
+  <button *ngIf="items.length" (click)="clearCart()">Clear cart</button>
+  <button *ngIf="items.length">Buy</button>
+</div>

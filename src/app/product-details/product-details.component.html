@@ -1,0 +1,8 @@
+<h2>Product Details</h2>
+
+<div ng-if="produit">
+  <h3>{{ produit?.name }}</h3>
+  <h4>{{ produit?.price }}</h4>
+  <p>{{ produit?.description }}</p>
+  <button (click)="addToCart(produit!)">Buy</button>
+</div>
